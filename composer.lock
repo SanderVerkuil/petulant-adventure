@@ -4,8 +4,62 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cce6015a015d1aaf6f2cae97680d79b9",
+    "hash": "e907923ceda26b8a7a9283a27bb5e798",
     "packages": [
+        {
+            "name": "barryvdh/laravel-debugbar",
+            "version": "v1.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-debugbar.git",
+                "reference": "c73003721a408cb59ec33c6901257838246dd2eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/c73003721a408cb59ec33c6901257838246dd2eb",
+                "reference": "c73003721a408cb59ec33c6901257838246dd2eb",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "4.*|5.0.*",
+                "maximebf/debugbar": "1.10.*",
+                "php": ">=5.3.0",
+                "symfony/finder": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\Debugbar\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "PHP Debugbar integration for Laravel",
+            "keywords": [
+                "debug",
+                "debugbar",
+                "laravel",
+                "profiler",
+                "webprofiler"
+            ],
+            "time": "2014-11-18 14:03:50"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.0.2",
@@ -52,6 +106,56 @@
                 "preload"
             ],
             "time": "2014-03-12 00:05:31"
+        },
+        {
+            "name": "cornford/bootstrapper",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bradcornford/Bootstrapper.git",
+                "reference": "6fbd620c95224dad40638103a1c8744fe29260bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bradcornford/Bootstrapper/zipball/6fbd620c95224dad40638103a1c8744fe29260bd",
+                "reference": "6fbd620c95224dad40638103a1c8744fe29260bd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.2.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "phpspec/phpspec": "2.0.*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Cornford\\Bootstrapper": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bradley Cornford",
+                    "email": "me@bradleycornford.co.uk"
+                }
+            ],
+            "description": "An easy way to intergrate Twitter Bootstrap with Laravel 4.",
+            "keywords": [
+                "alerts",
+                "bootstrap",
+                "form",
+                "laravel",
+                "templates",
+                "twitter",
+                "views"
+            ],
+            "time": "2014-08-27 07:09:12"
         },
         {
             "name": "d11wtq/boris",
@@ -144,6 +248,51 @@
                 "zf2"
             ],
             "time": "2014-10-26 09:05:09"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "1.0.6-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/google-api-php-client.git",
+                "reference": "a41a9dc0662e36420030eaab802dbb1f85459479"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/a41a9dc0662e36420030eaab802dbb1f85459479",
+                "reference": "a41a9dc0662e36420030eaab802dbb1f85459479",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "src/"
+            ],
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2014-09-30 19:33:59"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -349,6 +498,61 @@
                 "laravel"
             ],
             "time": "2014-10-04 18:48:27"
+        },
+        {
+            "name": "maximebf/debugbar",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maximebf/php-debugbar.git",
+                "reference": "348b49b3617c8295badef7f9fdb0aea15918154d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/348b49b3617c8295badef7f9fdb0aea15918154d",
+                "reference": "348b49b3617c8295badef7f9fdb0aea15918154d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "kriswallsmith/assetic": "The best way to manage assets",
+                "monolog/monolog": "Log using Monolog",
+                "predis/predis": "Redis storage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "DebugBar": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Bouroumeau-Fuseau",
+                    "email": "maxime.bouroumeau@gmail.com",
+                    "homepage": "http://maximebf.com"
+                }
+            ],
+            "description": "Debug bar in the browser for php application",
+            "homepage": "https://github.com/maximebf/php-debugbar",
+            "keywords": [
+                "debug"
+            ],
+            "time": "2014-10-31 19:59:37"
         },
         {
             "name": "monolog/monolog",
@@ -1642,9 +1846,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "google/apiclient": 10
+    },
     "prefer-stable": false,
     "platform": [
 
