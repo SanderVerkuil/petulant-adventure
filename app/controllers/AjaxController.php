@@ -32,6 +32,8 @@ class AjaxController extends BaseController {
 
 	function getImage($size = "w342", $image = "")
 	{
+		if ($image == "")
+			return Response::make(file_get_contents("http://placehold.it/154x231&text=" . urlencode(Input::get("name"))), 200, ["content-type" => "image/jpg"]);
 		return Response::make(file_get_contents("http://image.tmdb.org/t/p/$size/$image"), 200, ["content-type" => "image/jpg"]);
 	}
 

@@ -4,36 +4,52 @@ $(document).ready(function() {
         serviceUrl: '/ajax/movies/',
         onSelect: function(suggestion) {
             currentSuggestion = suggestion;
-            console.log(suggestion);
+            $("#addButton").html("Add " + suggestion.value);
+            if (!Exists(suggestion.value))
+                $("#addButton").removeClass('disabled');
         }
     });
     $("#addButton").on('click', function(k,e) {
         if (currentSuggestion == undefined)
             return false;
-        console.log(currentSuggestion);
-
+        $("#addButton").addClass('disabled');
         AddMovie(currentSuggestion.value, currentSuggestion);
 
         return false;
     })
 });
 
-function AddMovie(name, id)
+function Exists(name)
 {
     var exists = false;
-    $.each($(".movie"), function(key, value) {
-        var dataname = $(value).attr("data-name");
-
-        console.log("dataname: " + dataname + " - name: " + name);
-
-        if (dataname == name)
-        {
+    $.each($(".movie"), function(key, value)
+    {
+        if ($(value).attr("data-name") == name)
             exists = true;
-        }
     });
-    if (exists)
+    return exists;
+}
+
+function AddMovie(name, id)
+{
+    if (Exists(name))
         return false;
-    var snippet = "<div class='movie' data-id='"+id.data.id + "' data-name='" + name + "'><h1>" + name + "</h1><img src='ajax/image/w342" + id.data.poster_path + "' /><section class='artists'></section></div>";
-    
-    $("#movies-results").append(snippet);
+    var snippet = "
+    <div class='movie' data-name='{{value}}'>
+        <button type='button' class='close' data-dismiss='alert'>
+            <span aria-hidden='true'>&times;</span>
+            <span class='sr-only'Close</span>
+        </button>
+        <div class='movietitlecontainer'>
+            <span class='movietitle'>{{value}}</span>
+        </div>
+        <img src='ajax/image/w154{{data.poster_path}}' />
+    </div>
+    ";
+
+    $("#movies-results").append(Mustache.render(snippet, id));
+    $("button.close").on('click', function(k, e)
+    {
+        $(this).parent().remove();
+    });
 }

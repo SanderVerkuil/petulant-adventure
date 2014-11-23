@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 				src: [
 					'./bower_components/jquery/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
+					'./node_modules/mustache/mustache.js',
 					'./app/assets/javascript/*.js',
 				],
 				dest: './public/assets/javascript/frontend.js',
@@ -20,6 +21,7 @@ module.exports = function(grunt) {
 				src: [
 					'./bower_components/jquery/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
+					'./node_modules/mustache/mustache.js',
 					'./app/assets/javascript/*.js'
 				],
 				dest: './public/assets/javascript/backend.js',
