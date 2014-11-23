@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				src: [
 					'./bower_components/jquery/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
-					'./app/assets/javascript/frontend.js'
+					'./app/assets/javascript/*.js',
 				],
 				dest: './public/assets/javascript/frontend.js',
 			},
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 				src: [
 					'./bower_components/jquery/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
-					'./app/assets/javascript/backend.js'
+					'./app/assets/javascript/*.js'
 				],
 				dest: './public/assets/javascript/backend.js',
 			},
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
 					//watched files
 					'./bower_components/jquery/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
-					'./app/assets/javascript/frontend.js'
+					'./app/assets/javascript/*.js'
 				],   
 				tasks: ['concat:js_frontend','uglify:frontend'],     //tasks to run
 				options: {
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
 					//watched files
 					'./bower_components/jquery/jquery.js',
 					'./bower_components/bootstrap/dist/js/bootstrap.js',
-					'./app/assets/javascript/backend.js'
+					'./app/assets/javascript/*.js'
 				],   
 				tasks: ['concat:js_backend','uglify:backend'],     //tasks to run
 				options: {
