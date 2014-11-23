@@ -17,6 +17,9 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
+		Debugbar::log("Hai");
+		Debugbar::log(Config::get('google.api_key'));
+		Debugbar::log($_SERVER);
 		return View::make('hello');
 	}
 

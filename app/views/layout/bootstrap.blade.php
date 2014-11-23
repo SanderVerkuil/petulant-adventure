@@ -1,7 +1,7 @@
 @extends('layout.basic')
 
 @section('header')
-	{{Bootstrap::css()}}
+	{{ HTML::style("assets/stylesheets/frontend.css") }}
 @stop
 
 @section('body')
@@ -15,5 +15,5 @@
 @stop
 
 @section('javascripts')
-	{{Bootstrap::js()}}
+	{{ HTML::script("assets/javascript/frontend.js") }}
 @endsection

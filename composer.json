@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"google/apiclient": "1.0.*@beta",
 		"cornford/bootstrapper": "1.*",
-		"barryvdh/laravel-debugbar": "1.8.*"
+		"barryvdh/laravel-debugbar": "1.8.*",
+		"phpunit/phpunit": "3.7.*"
 	},
 	"autoload": {
 		"classmap": [
