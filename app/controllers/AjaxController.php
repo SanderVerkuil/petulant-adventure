@@ -5,14 +5,26 @@ class AjaxController extends BaseController {
 	public function getMovies($query = "")
 	{
 		$q = Input::get("query");
-		$test = $this->apiRequest('search/movie', array("search_type" => "ngram", "query" => $q));
+
+		$q = preg_replace("/ \(.*\)/", "", $q);
+
+		$test = $this->apiRequest('search/multi', array("query" => $q));
 
 		$suggestions = array();
 
+		Debugbar::log($test);
+
 		foreach($test["results"] as $result)
 		{
+			if ($result["media_type"] == "tv")
+				$name = $result["original_name"];
+			else if ($result["media_type"] == "movie")
+				$name = $result["original_title"];
+
+			$result["name"] = $name;
+
 			$current = array(
-				"value" => $result["original_title"],
+				"value" => $name . " ({$result['media_type']}) ({$result['id']})",
 				"data" => $result
 			);
 			$suggestions[] = $current;
@@ -44,11 +56,10 @@ class AjaxController extends BaseController {
 
 	public function getActors($id = "")
 	{
-		$data = $this->apiRequest("movie/$id/credits");
+		Debugbar::log(Input::get("type"));
+		$data = $this->apiRequest(Input::get('type') . "/$id/credits");
 
-		echo "<pre>";
-		print_r($data);
-		echo "</pre>";
+		return Response::json($data);
 	}
 
 	public function missingMethod($parameters = array())
